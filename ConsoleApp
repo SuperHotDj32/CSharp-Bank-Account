@@ -1,0 +1,138 @@
+using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+
+            string Username = "Tasos";
+            string Username2=null;
+            int pin = 2538;
+            int Choice;
+            int Choice2;
+            int Choice3;
+            int analhpsh;
+            int kata8esh;
+            float poso = 500;
+            string username2 = null;
+            int pin2=0;
+
+
+            Console.WriteLine("Press 1 To Register in a Account");
+            Console.WriteLine("Press 2 To Login In Your Account");
+            Choice = Convert.ToInt32(Console.ReadLine());
+            if (Choice == 1)
+            {
+                Console.WriteLine("Type Your Username ");
+                Username = Console.ReadLine();
+                Console.WriteLine("Type Your Pin");
+                pin = Convert.ToInt32(Console.ReadLine());
+            }
+            if (Choice == 2)
+            {
+                Console.WriteLine("Give Me Your Username ");
+                username2 = Console.ReadLine();
+                Console.WriteLine("Give Me Your Pin ");
+                pin2 = Convert.ToInt32(Console.ReadLine());
+
+           
+
+            }
+            if (Username == username2 && pin == pin2)
+            {
+                Console.WriteLine("Welcome");
+                Console.ReadLine();
+
+            }
+            else
+            {
+                Console.WriteLine("Invalid Number");
+            }
+
+            Console.WriteLine("Do You Want To Get Money From Your Bank? " + "Press 1");
+            Console.WriteLine("Do You Want To Insert Money In Your Bank? " + "Press 2");
+            Choice2 = Convert.ToInt32(Console.ReadLine());
+            if (Choice2 == 1)
+            {
+                while (true)
+                {
+                    Console.WriteLine("How Many Do You Want To Take?");
+                    analhpsh = Convert.ToInt32(Console.ReadLine());
+
+                    if (analhpsh > 500)
+                    {
+                        Console.WriteLine("You Don't Have This Money In Your Bank Change It!");
+                        Console.WriteLine("Please Try Again!");
+                    }
+                    else break;
+                }
+
+                    if (analhpsh <= 500)
+                    { Console.WriteLine("You Can Get Your Money In A Few Seconds");
+                        poso -= analhpsh;
+                        Console.WriteLine("Your Balance is: " + poso);
+                    }
+            }
+            if (Choice2 == 2)
+            {
+                while (true)
+                {
+                    Console.WriteLine("How Many Cash Do You Want To Insert?");
+                    kata8esh = Convert.ToInt32(Console.ReadLine());
+
+                    if (kata8esh <= 0)
+                    {
+                        Console.WriteLine("Invalid Number Try Again");
+                    }
+                    else break;
+                }
+                if (kata8esh >= 0)
+                {
+                    Console.WriteLine("Your Money Added Succesfully!");
+                    poso += kata8esh;
+                    Console.WriteLine("Your Balance is: " + poso);
+                }
+            }
+            Console.WriteLine("Do You Want To Change Username & Password? " + "Press 1");
+            Console.WriteLine("If You Don't Then Exit " + "Press 2");
+            Choice3 = Convert.ToInt32(Console.ReadLine());
+            if (Choice3 == 1)
+            {
+                while (true)
+                {
+                    Console.WriteLine("Change Your Username: ");
+                    Username2 = Console.ReadLine();
+                    if (Username == Username2)
+                    {
+                        Console.WriteLine("The Username Are The Same Please Try Again!");
+                        break;
+                    }
+                   
+                }
+                while (true)
+                    {
+                if (Username != Username2)
+                {
+                   
+                        Console.WriteLine("Change Your Username: ");
+                        Username2 = Console.ReadLine();
+                        break;
+                    }
+                    Console.WriteLine("Your Username Changed Succesfully");
+                }
+
+                Console.WriteLine("Give Me Your Pin ");
+                pin = Convert.ToInt32(Console.ReadLine());
+            }
+            if (Choice3 == 2)
+            {
+                Console.WriteLine("bye");
+                return;
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
